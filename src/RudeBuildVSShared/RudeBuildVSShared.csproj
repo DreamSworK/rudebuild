@@ -83,60 +83,28 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Builder.cs">
-      <Link>Builder.cs</Link>
-    </Compile>
-    <Compile Include="BytesToKiloBytesConverter.cs">
-      <Link>BytesToKiloBytesConverter.cs</Link>
-    </Compile>
-    <Compile Include="CommandManager.cs">
-      <Link>CommandManager.cs</Link>
-    </Compile>
-    <Compile Include="CommandRegistry.cs">
-      <Link>CommandRegistry.cs</Link>
-    </Compile>
-    <Compile Include="Commands\AboutCommand.cs">
-      <Link>Commands\AboutCommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\BuildCommandBase.cs">
-      <Link>Commands\BuildCommandBase.cs</Link>
-    </Compile>
-    <Compile Include="Commands\BuildProjectCommand.cs">
-      <Link>Commands\BuildProjectCommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\BuildSolutionCommand.cs">
-      <Link>Commands\BuildSolutionCommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\CleanCacheCommand.cs">
-      <Link>Commands\CleanCacheCommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\GlobalSettingsCommand.cs">
-      <Link>Commands\GlobalSettingsCommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\ICommand.cs">
-      <Link>Commands\ICommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\SolutionSettingsCommand.cs">
-      <Link>Commands\SolutionSettingsCommand.cs</Link>
-    </Compile>
-    <Compile Include="Commands\StopBuildCommand.cs">
-      <Link>Commands\StopBuildCommand.cs</Link>
-    </Compile>
-    <Compile Include="EnumDisplayer.cs">
-      <Link>EnumDisplayer.cs</Link>
-    </Compile>
-    <Compile Include="OutputPane.cs">
-      <Link>OutputPane.cs</Link>
-    </Compile>
+    <Compile Include="Builder.cs" />
+    <Compile Include="BytesToKiloBytesConverter.cs" />
+    <Compile Include="CommandManager.cs" />
+    <Compile Include="CommandRegistry.cs" />
+    <Compile Include="Commands\AboutCommand.cs" />
+    <Compile Include="Commands\BuildCommandBase.cs" />
+    <Compile Include="Commands\BuildProjectCommand.cs" />
+    <Compile Include="Commands\BuildSolutionCommand.cs" />
+    <Compile Include="Commands\CleanCacheCommand.cs" />
+    <Compile Include="Commands\GlobalSettingsCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\SolutionSettingsCommand.cs" />
+    <Compile Include="Commands\StopBuildCommand.cs" />
+    <Compile Include="EnumDisplayer.cs" />
+    <Compile Include="OutputPane.cs" />
     <Compile Include="GlobalSettingsDialog.xaml.cs">
       <DependentUpon>GlobalSettingsDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="SolutionSettingsDialog.xaml.cs">
       <DependentUpon>SolutionSettingsDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPFHelper.cs">
-      <Link>WPFHelper.cs</Link>
-    </Compile>
+    <Compile Include="WPFHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RudeBuild\RudeBuild.csproj">

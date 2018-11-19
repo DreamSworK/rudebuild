@@ -49,50 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildOptions.cs">
-      <Link>BuildOptions.cs</Link>
-    </Compile>
-    <Compile Include="CacheCleaner.cs">
-      <Link>CacheCleaner.cs</Link>
-    </Compile>
-    <Compile Include="DisplayValueAttribute.cs">
-      <Link>DisplayValueAttribute.cs</Link>
-    </Compile>
-    <Compile Include="GlobalSetings.cs">
-      <Link>GlobalSetings.cs</Link>
-    </Compile>
-    <Compile Include="IOutput.cs">
-      <Link>IOutput.cs</Link>
-    </Compile>
-    <Compile Include="ModifiedTextFileWriter.cs">
-      <Link>ModifiedTextFileWriter.cs</Link>
-    </Compile>
-    <Compile Include="ProcessLauncher.cs">
-      <Link>ProcessLauncher.cs</Link>
-    </Compile>
+    <Compile Include="BuildOptions.cs" />
+    <Compile Include="CacheCleaner.cs" />
+    <Compile Include="DisplayValueAttribute.cs" />
+    <Compile Include="GlobalSetings.cs" />
+    <Compile Include="IOutput.cs" />
+    <Compile Include="ModifiedTextFileWriter.cs" />
+    <Compile Include="ProcessLauncher.cs" />
     <Compile Include="ProjectInfo.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="ProjectReaderWriter.cs">
-      <Link>ProjectReaderWriter.cs</Link>
-    </Compile>
-    <Compile Include="SerializableDictionary.cs">
-      <Link>SerializableDictionary.cs</Link>
-    </Compile>
-    <Compile Include="Settings.cs">
-      <Link>Settings.cs</Link>
-    </Compile>
-    <Compile Include="SolutionInfo.cs">
-      <Link>SolutionInfo.cs</Link>
-    </Compile>
-    <Compile Include="SolutionReaderWriter.cs">
-      <Link>SolutionReaderWriter.cs</Link>
-    </Compile>
-    <Compile Include="SolutionSettings.cs">
-      <Link>SolutionSettings.cs</Link>
-    </Compile>
-    <Compile Include="UnityFileMerger.cs">
-      <Link>UnityFileMerger.cs</Link>
-    </Compile>
+    <Compile Include="ProjectReaderWriter.cs" />
+    <Compile Include="SerializableDictionary.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SolutionInfo.cs" />
+    <Compile Include="SolutionReaderWriter.cs" />
+    <Compile Include="SolutionSettings.cs" />
+    <Compile Include="UnityFileMerger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(SolutionDir)\LICENSE.rtf" />
