@@ -31,10 +31,16 @@ namespace RudeBuild
         {
             if (line.StartsWith("VisualStudioVersion = " + visualStudioVersionString))
             {
-                if (versionToChange != VisualStudioVersion.VSUnknown)
-                {
-                    throw new InvalidDataException("Solution file is corrupt. It contains two lines declaring the Visual Studio version.");
-                }
+                versionToChange = versionToSet;
+                return true;
+            }
+            return false;
+        }
+
+        private static bool ParseVisualStudioName(string line, string visualStudioNameString, VisualStudioVersion versionToSet, ref VisualStudioVersion versionToChange)
+        {
+            if (line.StartsWith("# Visual Studio " + visualStudioNameString))
+            {
                 versionToChange = versionToSet;
                 return true;
             }
@@ -115,6 +121,7 @@ namespace RudeBuild
         {
             var solutionFormatVersion = VisualStudioVersion.VSUnknown;
             var visualStudioVersion = VisualStudioVersion.VSUnknown;
+            var visualStudioName = VisualStudioVersion.VSUnknown;
             var version = VisualStudioVersion.VSUnknown;
             var configManager = new SolutionConfigManager();
             var destSolutionText = new StringBuilder();
@@ -137,6 +144,16 @@ namespace RudeBuild
                              ParseSolutionFormatVersion(line, "12.00", VisualStudioVersion.VS2012, ref solutionFormatVersion))  // Note that VS 2013 and 2015 retain solution formation version 12.00!
                     {
                         version = solutionFormatVersion;
+                    }
+                    else if (ParseVisualStudioName(line, "2005", VisualStudioVersion.VS2005, ref visualStudioName) ||
+                             ParseVisualStudioName(line, "2008", VisualStudioVersion.VS2008, ref visualStudioName) ||
+                             ParseVisualStudioName(line, "2010", VisualStudioVersion.VS2010, ref visualStudioName) ||
+                             ParseVisualStudioName(line, "2012", VisualStudioVersion.VS2012, ref visualStudioName) ||
+                             ParseVisualStudioName(line, "2013", VisualStudioVersion.VS2013, ref visualStudioName) ||
+                             ParseVisualStudioName(line, "14", VisualStudioVersion.VS2015, ref visualStudioName) ||
+                             ParseVisualStudioName(line, "15", VisualStudioVersion.VS2017, ref visualStudioName))
+                    {
+                        version = visualStudioName;
                     }
                     else if (ParseVisualStudioVersion(line, "8.0", VisualStudioVersion.VS2005, ref visualStudioVersion) ||
                              ParseVisualStudioVersion(line, "9.0", VisualStudioVersion.VS2008, ref visualStudioVersion) ||

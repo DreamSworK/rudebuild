@@ -44,7 +44,7 @@ namespace RudeBuild
 			string registryPath = GetDevEvnBaseRegistryKey(version);
 			RegistryKey registryKey = Registry.LocalMachine.OpenSubKey(registryPath);
 			if (null == registryKey)
-				throw new ArgumentException("Couldn't open Visual Studio registry key. Your version of Visual Studio is unsupported by this tool or Visual Studio is not installed properly.");
+				throw new ArgumentException("GetDevEnvDir: Couldn't open Visual Studio registry key. Your version of Visual Studio is unsupported by this tool or Visual Studio is not installed properly.");
 
 			if (version < VisualStudioVersion.VS2017)
 				return (string) registryKey.GetValue("EnvironmentDirectory");
@@ -65,7 +65,7 @@ namespace RudeBuild
                 string registryPath = GetDevEvnBaseRegistryKey(solutionInfo.Version) + @"ProjectMRUList";
                 RegistryKey registryKey = Registry.CurrentUser.OpenSubKey(registryPath, true);
                 if (null == registryKey)
-                    throw new ArgumentException("Couldn't open Visual Studio registry key. Your version of Visual Studio is unsupported by this tool or Visual Studio is not installed properly.");
+                    throw new ArgumentException("RemoveSolutionFromDevEnvMRUList: Couldn't open Visual Studio registry key. Your version of Visual Studio is unsupported by this tool or Visual Studio is not installed properly.");
 
                 string modifiedSolutionFilePath = _settings.ModifyFileName(solutionInfo.FilePath);
                 foreach (var keyName in registryKey.GetValueNames())
